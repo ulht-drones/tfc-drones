@@ -39,7 +39,7 @@ def desenha_diagrama_radiacao(ficheiro):
         h.set_rmin(ganho_minimo)
 
         plt.legend()
-        plt.show()
+        plt.savefig(ficheiro[:-4]+"_horizontal.png", bbox_inches='tight')
 
 
         v = plt.subplot(projection="polar")
@@ -52,4 +52,4 @@ def desenha_diagrama_radiacao(ficheiro):
         v.set_rmin(ganho_minimo)
 
         plt.legend()
-        plt.show()
+        plt.savefig(ficheiro[:-4]+"_vertical.png", bbox_inches='tight')
