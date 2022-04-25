@@ -4,21 +4,21 @@
 
 1. Criar os seguintes classes/objetos no models:
    1. centro do mapa
-   2. drone (incluir como campos tambem a) frequencia - integerfield, b) potencia transmitida - integerfield, c) antena - forneign key.
-   3. célula (incluir como campos tambem a) frequencia - integerfield, b) potencia transmitida - integerfield, c) antena - forneign key.
-   4. antena com campos: nome, ganho, ficheiro .msi que contem diagrama, desenho diagramas vertical e horizontal (ver exemplos aqui)  
-   5. polígono da área de serviço: nome e json com coordenadas dos vertices do poligono, e determinada cor. ver como defini o poligono em 
-   6. heatmap da zona iluminada pelo drone. usa para já a imagem em baixo. representa-a sobre o mapa com a propriedade "opacity: 0.5", por forma a que tenha transparencia que permita visualizar o mapa
+   2. drone, com  os campos: nome, posicao - JSONField, a) frequencia - integerfield, b) potencia transmitida - integerfield, c) antena - forneign key.
+   3. célula, com  os campos: nome, posicao - JSONField,  a) frequencia - integerfield, b) potencia transmitida - integerfield, c) antena - forneign key.
+   4. antena com campos: nome, ganho, ficheiro .msi que contem diagrama, desenho diagramas vertical e horizontal - imageField (ver exemplos [aqui](https://github.com/ulht-drones/tfc-drones/tree/main/dados/antenna_diagrams)) , heatmap (imageField).
+      * um heatmap ilustra como a antena do drone está a iluminar a área de serviço
+   5. polígono da área de serviço: nome e json com coordenadas dos vertices do poligono, e determinada cor. ver como defini o [poligono aqui](https://github.com/ulht-drones/tfc-drones/blob/b3936021d126f458109bffd9b9c1eff1963758d6/drones/templates/drones/mapa.html).
 
 2. Criar objetos no admin de cada tipo. 
 * centrar mapa na universidade da Sérvia. 
-* representar celulas e drone nessa zona.
+* representar posicao das celulas e drone nessa zona.
 * inventar polígono em volta do estadio de futebol
-* sobrepor imagem do heatmap por cima do poligono (heatmap iulustra como a antena do drone está a iluminar a área de serviço).
+* criar antena de drone, que usa como heatmap [esta imagem](https://github.com/ulht-drones/tfc-drones/blob/main/dados/heatmaps/heatmap.png)
 
 3. na função view ir buscar esses objetos e envia-los no context para o HTML
 
-4. Inserir, no mapa, no HTML os objetos
+4. Inserir, no mapa, no HTML os objetos. imagem do heatmap deve usar as coordenadas do drone devem ser tais que heatmap deve estar sobreposta por cima do poligono (heatmap ilustra como a antena do drone está a iluminar a área de serviço).
 
 5. incluir no relatório esta informação, sobretudo visualização dos 4 tipos de objetos
 
