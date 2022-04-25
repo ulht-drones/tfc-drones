@@ -86,7 +86,10 @@
    * diagramas 
    * heatmap. 
 * Deve haver um formulario permite escolher a celula, mostrando info da sua antena. usar um `fetch()`, comunicação assincrona AJAX (ver [aula de Programação Web](https://educast.fccn.pt/vod/clips/19qwlm80te/html5.html?locale=en) que explica).
+* pode mostrar-se no mapa tambem [diagrama de radiação transparente](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/80010504_1750_x_co_m45_00t_horizontal_transparent.png)
 * o heatmap deverá ser mostrado no mapa. a resntante informação numa caixa de informação ao lado direito, que pode ser minimizada se o utilizador quiser.
+
+ha muita coisa a representar. ideal é utilizador decidir o q quer ver. devemos pensar bem. ver Metric. e pensar na usabilidade. 
 
 ## 3. desenho de polígono pelo utilizador atraves de cliques no mapa
 
