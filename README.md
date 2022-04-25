@@ -35,15 +35,18 @@
 
 #### 2. No  adminC, criar objetos de cada tipo. 
 
-* centrar mapa na universidade da Sérvia. 
+* usar como cenário a universidade da Sérvia. 
 * representar posicao das celulas e drone nessa zona.
-* inventar polígono em volta do estadio de futebol
-* usar para já em todas as antenas os seguintes diagramas: [vertical](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/80010504_1750_x_co_m45_00t_vertical.png) e [horizontal](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/80010504_1750_x_co_m45_00t_horizontal.png). Estes podem ser criados com a função [aqui](https://github.com/ulht-drones/tfc-drones/tree/main/dados/antenna_diagrams)), mas trataremos disso mais tarde.
-      * um heatmap ilustra como a antena do drone está a iluminar a área de serviço. para já, associar a todas as antenas [esta imagem](https://github.com/ulht-drones/tfc-drones/blob/main/dados/heatmaps/heatmap.png) em todos
-      * ficheiro guarda um ficheiro .msi que contem descrição do diagrama. para já, associar a todas as antenas [este ficheiro](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/80010504_1750_x_co_m45_00t.msi) 
-      * nome da antena é nome do ficheiro .msi anterior
-* poligono centrado no campo de futebol, ver como defini um [poligono aqui](https://github.com/ulht-drones/tfc-drones/blob/16c1dfac3a7da4c0d3495ab19659ce3599c8cb04/drones/templates/drones/mapa.html#L48). ir buscar coordenadas de pontos que permitam construir um poligono em torno do estado
-
+* desenhar polígono em volta do estadio de futebol
+* usar para já em todas as celulas e drone a mesma antena:
+    * [ficheiro](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/80010504_1750_x_co_m45_00t.msi),
+    * [vertical](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/80010504_1750_x_co_m45_00t_vertical.png) 
+    * [horizontal](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/80010504_1750_x_co_m45_00t_horizontal.png). 
+        * Estes podem ser criados com a função [aqui](https://github.com/ulht-drones/tfc-drones/tree/main/dados/antenna_diagrams)), mas trataremos disso mais tarde.
+    * [heatmap](https://github.com/ulht-drones/tfc-drones/blob/main/dados/heatmaps/heatmap.png). um heatmap ilustra como a antena do drone está a iluminar a área de serviço.
+* poligono centrado no campo de futebol
+    * ver como defini um [poligono aqui](https://github.com/ulht-drones/tfc-drones/blob/16c1dfac3a7da4c0d3495ab19659ce3599c8cb04/drones/templates/drones/mapa.html#L48). ir buscar coordenadas de pontos que permitam construir um poligono em torno do estado. Exemplo de formato do poligono:
+  
       ```json
          {
              'type': 'Feature',
@@ -73,11 +76,7 @@
 
 ## 2. visualizar diagramas de radiação
 
-* Experimentar [jupyter](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/Desenho%20de%20diagramas%20de%20radia%C3%A7%C3%A3o%20duma%20antena.ipynb). Esta função recebe o nome de um ficheiro que tem o diagrama de radiação (ficheiro .msi) e cria pngs com diagramas de radiação vertical e horizontal da antena.
-* usar a função (mesmo codigo) em [functions.py](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/functions.py) para criar pngs dos diagramas vertical e horizontal. 
-* guardar como imagem cada um dos diagramas
-* criar, no layout, uma caixa ao lado direito para visualizar os diagramas. Deve haver um formulario com elemento select que permite escolher a celula que queremos ver o diagrama. usar um `fetch()`, comunicação assincrona AJAX (ver [aula de Programação Web](https://educast.fccn.pt/vod/clips/19qwlm80te/html5.html?locale=en) que explica).
-
+* criar, no layout, uma caixa ao lado direito para visualizar os diagramas. Deve haver um formulario com elemento select que permite escolher a celula, mosntrando info da sua antena. usar um `fetch()`, comunicação assincrona AJAX (ver [aula de Programação Web](https://educast.fccn.pt/vod/clips/19qwlm80te/html5.html?locale=en) que explica).
 
 ## 3. desenho de polígono
 * ver este exemplo: https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-draw/
@@ -86,3 +85,9 @@
 
 ## 4. dados reais
 * usar os dados da Sérvia, coordenadas de celulas existentes. Atenção, que várias células podem estar "co-localizadas" no mesmo site (sitio), pois teem antenas a apontar para direções diferentes, ou usam frequencias diferentes
+
+
+## 5. DEsenho de antenas
+* Experimentar [jupyter](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/Desenho%20de%20diagramas%20de%20radia%C3%A7%C3%A3o%20duma%20antena.ipynb). Esta função recebe o nome de um ficheiro que tem o diagrama de radiação (ficheiro .msi) e cria pngs com diagramas de radiação vertical e horizontal da antena.
+* usar a função (mesmo codigo) em [functions.py](https://github.com/ulht-drones/tfc-drones/blob/main/dados/antenna_diagrams/functions.py) para criar pngs dos diagramas vertical e horizontal. 
+
