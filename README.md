@@ -3,8 +3,9 @@
 ## 1. representação de objetos (fazer 25.4.2022)
 
 #### 1. Criar os seguintes classes/objetos no [models](https://github.com/ulht-drones/tfc-drones/blob/main/drones/models.py):
-   0. cenário
-   1. centro do mapa, com os campos: coordenada, cenario (ForeignKey)
+   1. cenário, com os campo:
+      * nome
+      * coordenada_centro - JSONField
    2. drone, com  os campos: 
       * nome
       * posicao - JSONField
@@ -12,12 +13,12 @@
       * potencia transmitida - integerfield
       * antena - forneign key
       * cenario - ForeignKey.
-   4. célula, com  os campos: 
+   3. célula, com  os campos: 
       * nome
       * posicao - JSONField
       * antena - forneign key
       * cenario - ForeignKey.
-   8. antena com campos: 
+   4. antena com campos: 
       * frequencia - integerfield
       * potencia transmitida - integerfield
       * tilt - integerfield
@@ -28,11 +29,12 @@
       * diagrama_vertical - imageField
       * diagrama_horizontal - imageField
       * heatmap - imageField 
-   10. polígono da área de serviço, com os campos: 
+   5. polígono da área de serviço, com os campos: 
       * nome
       * pontos, JSonField (com coordenadas dos vertices do poligono). 
 
-#### 2. Criar objetos no admin de cada tipo. 
+#### 2. No  adminC, criar objetos de cada tipo. 
+
 * centrar mapa na universidade da Sérvia. 
 * representar posicao das celulas e drone nessa zona.
 * inventar polígono em volta do estadio de futebol
